@@ -34,31 +34,11 @@
   console.log para cada formato.
   */
   console.log( '\nNome convertido à partir de um slug:' );
-  var fullName = 'harry-august';
-
-  var newName = function newName (fullNameSlug) {
-    var firstName, lastName, name;
-
-    function returnArray (nameSlug) {
-      return nameSlug.split('-');
-    }
-
-    function fistLatterToUpperCase (fName, lName) {
-      fName = fName.charAt(0).toUpperCase() + fName.slice(1);
-      lName = lName.charAt(0).toUpperCase() + lName.slice(1);
-
-      return fName + ' ' + lName;
-    }
-
-    firstName = returnArray(fullNameSlug)[0];
-    lastName = returnArray(fullNameSlug)[1];
-    name = fistLatterToUpperCase(firstName, lastName);
-
-    return name;
-  }
-
-  console.log(fullName);
-  console.log(newName(fullName));
+  var fullName = 'harry-august-martin';
+  var newFullName = fullName.split('-').map(function (item) {
+    return item[0].toUpperCase() + item.slice(1);
+  }).join(' ');
+  console.log(newFullName);
 
   /*
   - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
