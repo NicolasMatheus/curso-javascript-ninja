@@ -23,3 +23,82 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+(function (win, doc) {
+  'use strict';
+  var $input = doc.querySelector('input');
+  var $btnIgualdade = doc.querySelector('[data-js="btn-igualdade"]');
+  var $btnCe = doc.querySelector('[data-js="btn-ce"]');
+  
+  var $btnAdicao = doc.querySelector('[data-js="btn-adicao"]');
+  var $btnSubtracao = doc.querySelector('[data-js="btn-subtracao"]');
+  var $btnMultiplicacao = doc.querySelector('[data-js="btn-multiplicacao"]');
+  var $btnDivisao = doc.querySelector('[data-js="btn-divisao"]');
+  
+  var $btnZero = doc.querySelector('[data-js="btn-0"]');
+  var $btnUm = doc.querySelector('[data-js="btn-1"]');
+  var $btnDois = doc.querySelector('[data-js="btn-2"]');
+  var $btnTres = doc.querySelector('[data-js="btn-3"]');
+  var $btnQuatro = doc.querySelector('[data-js="btn-4"]');
+  var $btnCinco = doc.querySelector('[data-js="btn-5"]');
+  var $btnSeis = doc.querySelector('[data-js="btn-6"]');
+  var $btnSete = doc.querySelector('[data-js="btn-7"]');
+  var $btnOito = doc.querySelector('[data-js="btn-8"]');
+  var $btnNove = doc.querySelector('[data-js="btn-9"]');
+
+  var inputValue = function () {
+    var numbers = $input.value.match(/\d+/g);
+    var signals = $input.value.match(/\D+/g);
+    return {numbers, signals};
+  };
+  $btnIgualdade.addEventListener('click', function () {
+    //$input.value = inputValue();
+    console.log(inputValue());
+  }, false);
+  $btnCe.addEventListener('click', function () {
+    return $input.value = 0;
+  }, false);
+
+  $btnZero.addEventListener('click', function () {
+    $input.value === '0' ? $input.value = $btnZero.value : $input.value += $btnZero.value;
+  }, false);
+  $btnUm.addEventListener('click', function () {
+    $input.value === '0' ? $input.value = $btnUm.value : $input.value += $btnUm.value;
+  }, false);
+  $btnDois.addEventListener('click', function () {
+    $input.value === '0' ? $input.value = $btnDois.value : $input.value += $btnDois.value;
+  }, false);
+  $btnTres.addEventListener('click', function () {
+    $input.value === '0' ? $input.value = $btnTres.value : $input.value += $btnTres.value;
+  }, false);
+  $btnQuatro.addEventListener('click', function () {
+    $input.value === '0' ? $input.value = $btnQuatro.value : $input.value += $btnQuatro.value;
+  }, false);
+  $btnCinco.addEventListener('click', function () {
+    $input.value === '0' ? $input.value = $btnCinco.value : $input.value += $btnCinco.value;
+  }, false);
+  $btnSeis.addEventListener('click', function () {
+    $input.value === '0' ? $input.value = $btnSeis.value : $input.value += $btnSeis.value;
+  }, false);
+  $btnSete.addEventListener('click', function () {
+    $input.value === '0' ? $input.value = $btnSete.value : $input.value += $btnSete.value;
+  }, false);
+  $btnOito.addEventListener('click', function () {
+    $input.value === '0' ? $input.value = $btnOito.value : $input.value += $btnOito.value;
+  }, false);
+  $btnNove.addEventListener('click', function () {
+    $input.value === '0' ? $input.value = $btnNove.value : $input.value += $btnNove.value;
+  }, false);
+
+  $btnAdicao.addEventListener('click', function() {
+    $input.value += $btnAdicao.value;
+  }, false);
+  $btnSubtracao.addEventListener('click', function() {
+    $input.value += $btnSubtracao.value;
+  }, false);
+  $btnMultiplicacao.addEventListener('click', function() {
+    $input.value += $btnMultiplicacao.value;
+  }, false);
+  $btnDivisao.addEventListener('click', function() {
+    $input.value += $btnDivisao.value;
+  }, false); 
+})(window, document);
